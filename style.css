@@ -1,0 +1,232 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --pink: #ffb8dc;
+    --hot-pink: #ff69b4;
+    --dark-pink: #b82d75;
+    --cream: #fff9f4;
+    --purple: #d8c2ff;
+    --ink: #5d2850;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--ink);
+    font-family: "Trebuchet MS", sans-serif;
+    background-color: var(--pink);
+    background-image: radial-gradient(#fff9f4 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+}
+
+.top-bar, footer {
+    padding: 14px;
+    text-align: center;
+    background: var(--hot-pink);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+main {
+    width: min(760px, 92%);
+    margin: 32px auto;
+    padding: 14px;
+    border: 3px solid white;
+    outline: 3px dashed var(--dark-pink);
+    background: var(--cream);
+    box-shadow: 8px 8px 0 var(--dark-pink);
+}
+
+.screen {
+    min-height: 450px;
+    padding: 30px 18px;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.eyebrow, .tiny-text, .sticker {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.sticker {
+    display: inline-block;
+    padding: 10px;
+    background: var(--purple);
+    border: 2px solid white;
+    transform: rotate(-4deg);
+}
+
+h1, h2 {
+    font-family: "Press Start 2P", monospace;
+    line-height: 1.8;
+}
+
+h1 {
+    color: var(--hot-pink);
+    font-size: clamp(19px, 4vw, 32px);
+    text-shadow: 3px 3px white, 5px 5px var(--purple);
+}
+
+h2 {
+    font-size: clamp(12px, 2.5vw, 17px);
+}
+
+.subtitle {
+    line-height: 1.7;
+}
+
+.pixel-cake {
+    margin: 24px;
+    font-size: 64px;
+    animation: bounce 1.4s infinite ease-in-out;
+}
+
+.cute-button {
+    padding: 15px 18px;
+    border: 3px solid white;
+    outline: 2px solid var(--dark-pink);
+    background: var(--hot-pink);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--dark-pink);
+}
+
+    .cute-button:hover, .gift-card:hover {
+        transform: translateY(-3px);
+        filter: brightness(1.06);
+    }
+
+.gift-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 30px 0;
+}
+
+.gift-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 190px;
+    min-height: 140px;
+    padding: 20px 12px;
+    border: 2px dashed var(--hot-pink);
+    background: #ffe5f2;
+    color: var(--ink);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.big-emoji {
+    font-size: 40px;
+}
+
+.content-panel {
+    margin: 28px 0;
+    padding: 20px;
+    border: 2px dashed var(--hot-pink);
+    background: white;
+}
+
+.envelope {
+    font-size: 54px;
+}
+
+.letter-text {
+    max-width: 470px;
+    margin: 20px auto;
+    line-height: 1.9;
+    text-align: left;
+    white-space: pre-line;
+}
+
+.signature {
+    color: var(--dark-pink);
+    font-style: italic;
+}
+
+.photo-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.polaroid {
+    width: min(240px, 100%);
+    margin: 0;
+    padding: 10px 10px 16px;
+    background: white;
+    box-shadow: 2px 4px 12px #b82d7533;
+    transform: rotate(-2deg);
+}
+
+    .polaroid:nth-child(even) {
+        transform: rotate(3deg);
+    }
+
+    .polaroid img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+
+    .polaroid figcaption {
+        padding-top: 12px;
+        font-size: 13px;
+    }
+
+footer {
+    margin-top: 25px;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: 22px auto;
+        padding: 8px;
+    }
+
+    .screen {
+        padding: 25px 10px;
+    }
+
+    .top-bar {
+        font-size: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
